@@ -1,0 +1,12 @@
+
+<%= form_for(:session, :url => sessions_path) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Enter" %>
+  </div>
+<% end %>
+
+<p>New user? <%= link_to "Register email only!", register_path %></p>

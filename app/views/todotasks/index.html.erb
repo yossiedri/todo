@@ -1,0 +1,27 @@
+<h1>Listing todotasks</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Duedate</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @todotasks.each do |todotask| %>
+  <tr>
+    <td><%= todotask.title %></td>
+    <td><%= todotask.duedate %></td>
+    <td><%= todotask.description %></td>
+    <td><%= link_to 'Show', todotask %></td>
+    <td><%= link_to 'Edit', edit_todotask_path(todotask) %></td>
+    <td><%= link_to 'Destroy', todotask, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Todotask', new_todotask_path %>
