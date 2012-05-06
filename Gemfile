@@ -14,4 +14,8 @@ gem "email_spec", ">= 1.2.1", :group => :test
 gem "will_paginate", ">= 3.0.3"
 gem 'ruby-debug19',:platform => :ruby_19 , :group => [:development, :test]
 gem 'faker','0.3.1', :group => [:development, :test]
-gem "pg", :group => [:production]
+
+group :production do
+	gem "pg"
+	gem 'therubyracer-heroku'
+end
