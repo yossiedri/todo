@@ -1,11 +1,14 @@
 class SessionsController < ApplicationController
   
   def new
+
+    redirect_to  current_user if signed_in?
+
   	@title = "Get In..."
   end
 
   def create
-    debugger
+    
     user = User.authenticate(params[:session][:email])
     
     if user.nil?

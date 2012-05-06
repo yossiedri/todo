@@ -1,1 +1,32 @@
-<H1>All tasks</H1>
+<table class="profile" summary="Profile information">
+	
+  <tr>
+    <td class="main">
+      <h1>
+        Todo Tasks for: <%= @user.name %>
+      </h1>
+     
+      <%#= render 'follow_form' if signed_in? %>
+      
+      <% unless @user.todotasks.empty? %>
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Duedate</th>
+            <th>Description</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <%= render @todotasks %>
+        </table>
+        <%= will_paginate @todotasks %>
+      <% end %>
+
+    </td> 
+  </tr>
+</table>
+
+
+
+
+ 

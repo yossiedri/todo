@@ -1,0 +1,8 @@
+
+<tr>
+    <td><%= todotask.title %></td>
+    <td><%= todotask.duedate %></td>
+    <td><%= todotask.description %></td>
+    <td><%= link_to 'Edit', edit_todotask_path(todotask) %></td>
+    <td><%= link_to 'Checkoff', todotask, confirm: 'Are you sure?', method: :delete %></td>
+</tr>

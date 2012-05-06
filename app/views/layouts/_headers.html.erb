@@ -3,6 +3,7 @@
     <ul>
       <% if signed_in? %>
       <li><%= link_to "Home", current_user %></li>
+      <li><%= link_to 'New Todotask', new_todotask_path %></li>
       <li><%= link_to "Settings", edit_user_path(current_user) %></li>
       <li><%= link_to "Log out", logout_path, :method => :delete %></li>
       <% else %>

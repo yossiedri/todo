@@ -1,16 +1,5 @@
 <%= form_for(@todotask) do |f| %>
-  <% if @todotask.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@todotask.errors.count, "error") %> prohibited this todotask from being saved:</h2>
-
-      <ul>
-      <% @todotask.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+  <%= render 'shared/errors', :object => f.object %>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -23,6 +12,7 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
+  <%= %>
   <div class="actions">
     <%= f.submit %>
   </div>

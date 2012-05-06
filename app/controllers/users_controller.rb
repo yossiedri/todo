@@ -4,22 +4,16 @@ class UsersController < ApplicationController
   before_filter :authenticate, :except => [:new, :create]
   before_filter :correct_user, :only => [:show,:edit,:update,:destroy]
   
-  # def index
-  #   @title = "My todo tasks"
-  #   @tasks = Todotask.paginate(
-  #           :page => params[:page],
-  #           :per_page => 10,
-  #           :include => [])
-  # end
 
   def show
    	  @user = User.find(params[:id])
       
       @title = "My todo tasks"
-      @tasks = Todotask.paginate(
+      @todotasks = Todotask.paginate(
             :page => params[:page],
             :per_page => 10,
             :include => [])
+      debugger
 
   end
 
