@@ -49,6 +49,10 @@ class TodotasksController < ApplicationController
   def destroy
     @todotask = Todotask.find(params[:id])
     @todotask.destroy
-    redirect_to current_user
+    
+    respond_to do |format|  
+      format.html { redirect_to(current_user) }  
+      format.js   { render :nothing => true }  
+    end  
   end
 end

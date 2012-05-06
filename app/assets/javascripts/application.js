@@ -13,3 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function(){
+   
+  $('.checkoff_tasks').bind('ajax:success', function() {  
+    
+    $(this).closest('tr').fadeOut();  
+  });  
+
+});
